@@ -19,7 +19,7 @@ const WithIncrement =(Component)=>{
 const Button=({count,increment})=>{
 
 return(
-    <div>
+    <div className='container' >
         <h1>Count:{count}</h1>
         <button onClick={increment}>Increment</button>
     </div>
@@ -27,12 +27,14 @@ return(
 }
 
 
-export const HigherOrderComponent = () => {
+ const HigherOrderComponent = (props) => {
 
 const WithIncrementButton = WithIncrement(Button);
   return (
     <div>
-        <WithIncrementButton/>
+        <WithIncrementButton firsttName={props.useranme}/>
     </div>
   )
 }
+
+export default HigherOrderComponent;

@@ -1,0 +1,27 @@
+
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+label{
+  display: block;
+  float: left;
+}
+
+input{
+ display: block;
+  padding: 10px;
+  margin: 20px;
+}
+button{
+  display: block;
+  padding: 10px;
+  background-color: brown;
+  font-size: 20px;
+  justify-content: center;
+}

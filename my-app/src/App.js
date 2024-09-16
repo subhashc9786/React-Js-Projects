@@ -1,18 +1,25 @@
 
-import { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import './App.css';
-import MyComponent from './MyComponent';
-// import { useState} from 'react'
-import TextComponent from './TextComponent';
-import UserRef from './UserRef';
-import AnotherStateUpadate from './component/AnotherStateUpadate';
-import { HigherOrderComponent } from './component/HigherOrderComponent';
-function App() {
+import Fetchmethod from './FetchMethod/Fetchmethod.jsx';
+// import MyComponent from './MyComponent';
 
+// import TextComponent from './TextComponent';
+// import UserRef from './UserRef';
+// import AnotherStateUpadate from './component/AnotherStateUpadate';
+// import { HigherOrderComponent } from './component/HigherOrderComponent';
+// import { UseRefComponent } from './component/UseRefComponent';
+// import { NewFormComp } from './component/NewFormComp';
+const HigherOrderComponent =lazy(() =>import('./component/HigherOrderComponent.js'));
+
+function App() {
+  
+  // const NewFormComp = lazy(()=>import("./component/HigherOrderComponent.js"))
 
 const [audio, setaudio] = useState();
 const [writetext, setWriteText] = useState();
   // const [increase,setIncrease]= useState(0);
+  
 useEffect(() => {
   setTimeout(()=>{
     const textTospeak = "Hello There";
@@ -43,7 +50,7 @@ useEffect(() => {
 // console.log(arr);
   return (
   <>
-  <div>
+  {/* <div>
 <textarea onChange={(e)=>setWriteText(e.target.value)}></textarea>
   </div>
  
@@ -53,7 +60,7 @@ useEffect(() => {
           <source src={audio} type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
-      </div>
+      </div> */}
   
 
 
@@ -81,6 +88,13 @@ useEffect(() => {
           main 
         </h1>
       </div> */}
+     {/* <UseRefComponent/> */}
+     {/* <Suspense  fallback={<div>loading...</div>}>
+
+     <HigherOrderComponent/>
+     </Suspense> */}
+     <HigherOrderComponent useranme='sonu'/>
+{/* <h1>hello</h1> */}
     </>
   );
 }
