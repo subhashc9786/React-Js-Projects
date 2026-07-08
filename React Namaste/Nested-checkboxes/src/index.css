@@ -1,0 +1,10 @@
+.app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: aqua; */
+}
+
+.parent {
+  padding-left: 20px;
+}
